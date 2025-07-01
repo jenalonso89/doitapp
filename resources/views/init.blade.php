@@ -21,5 +21,6 @@
         <input type="hidden" name="estado" value="0">
         <button type="submit" class="btn btn-primary">Crear tarea</button>
         <a href="/tareas" class="btn btn-secondary">Ver tareas</a>
+        <a href="/ranking" class="btn btn-info">Ranking</a>
     </form>
 @endsection

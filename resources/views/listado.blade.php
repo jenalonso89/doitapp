@@ -11,12 +11,14 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <table class="table table-bordered">
+    <table class="table table-bordered">yo
         <thead class="table-light">
             <tr>
                 <th>Tarea</th>
                 <th>Estado</th>
                 <th colspan="3" class="text-center">Acciones</th>
+                <th>Creada por:</th>
+                <th>Resuelta por:</th>
             </tr>
         </thead>
         <tbody>
@@ -42,6 +44,12 @@
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
                         </form>
+                    </td>
+                    <td>
+                        {{$tarea->creada_por}}
+                    </td>
+                    <td>
+                        {{$tarea->resuelve}}
                     </td>
                 </tr>
             @endforeach

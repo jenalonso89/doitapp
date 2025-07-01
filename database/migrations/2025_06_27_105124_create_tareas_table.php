@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('prioridad');
             $table->boolean('estado');
+            $table->string('creada_por')->nullable();
+            $table->string('resuelve')->nullable();
         });
     }
 

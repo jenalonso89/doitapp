@@ -18,6 +18,10 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
+    public function puntos(){
+        $users = User::all();
+        return view('ranking', compact('users'));
+    }
     public function create(): View
     {
         return view('auth.register');
@@ -40,12 +44,12 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'points'=> '0',
         ]);
 
         event(new Registered($user));
-
         Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        return redirect("/");
     }
+
 }
